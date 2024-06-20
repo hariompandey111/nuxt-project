@@ -2,7 +2,7 @@
 
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/color-mode', "shadcn-nuxt"],
+  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/color-mode', 'shadcn-nuxt', '@nuxtjs/fontaine', '@nuxt/eslint'],
   shadcn: {
     /**
      * Prefix for all the imported component
@@ -12,9 +12,13 @@ export default defineNuxtConfig({
      * Directory that the component lives in.
      * @default "./components/ui"
      */
-    componentDir: './components/ui'
+    componentDir: './components/ui',
   },
-  plugins: [
-  ],
+  postcss: {
+    plugins: {
+      'postcss-nested': {},
+    },
+  },
+  plugins: [],
   css: ['~/assets/css/tailwind.css'],
-})
+});

@@ -7,17 +7,25 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "lint": "npm run lint:eslint && npm run lint:prettier",
+    "lint:eslint": "eslint .",
+    "lint:prettier": "prettier . --check",
+    "fix": "eslint . --fix && prettier . --write"
   },
   "dependencies": {
     "@egoist/tailwindcss-icons": "1.8.1",
     "@iconify/json": "latest",
+    "@nuxt/eslint": "^0.3.13",
     "@nuxtjs/color-mode": "^3.4.1",
+    "@nuxtjs/fontaine": "^0.4.3",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "daisyui": "^4.12.2",
     "lucide-vue-next": "^0.395.0",
     "nuxt": "^3.12.2",
+    "postcss-custom-media": "^10.0.6",
+    "prettier": "^3.3.2",
     "radix-vue": "^1.8.4",
     "sass": "^1.77.6",
     "shadcn-nuxt": "^0.10.4",
@@ -27,6 +35,7 @@
     "vue-router": "^4.3.3"
   },
   "devDependencies": {
-    "@nuxtjs/tailwindcss": "^6.12.0"
+    "@nuxtjs/tailwindcss": "^6.12.0",
+    "postcss-nested": "^6.0.1"
   }
 }
